@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+        <style>
+        #map{
+	 width: 1000px;
+	 height: 600px;
+	 position: absolute;
+	 left: 200px;
+	 top: 100px;
+	 border: solid 1px #90E090;
+	 text-align: center;
+     }
+     img{
+	 display: none;
+	 position: absolute;
+	 width: 32px;
+     height: 32px;
+     }
+
+
+
+        </style>
+
+	</head>
+	<body>
+		<div id='map'>
+			<input type="button" value="开始" onclick="start()"/>
+			<input type="button" value="暂停" onclick="stop()"/>
+			<input type="button" value="继续" onclick="restart()"/>
+		</div>
+		<img id='r' src="img/r.jpg" />
+        <img id='t' src="img/t.jpg" />
+        <img id='z' src="img/z.jpg" />
+        <img id='x' src="img/x.jpg" />
+        <img id='c' src="img/c.png" />
+        <img id='v' src="img/v.png" />
+        <img id='b' src="img/b.png" />
+	</body>
+</html>
+
+
+<script>
+
+//javascript实现代码
+function start(){
+
+t=document.getElementById('t')
+r=document.getElementById('r')
+z=document.getElementById('z')
+x=document.getElementById('x')
+c=document.getElementById('c')
+v=document.getElementById('v')
+b=document.getElementById('b')
+
+t.style.left='200px';
+t.style.top='250px';
+
+r.style.left='200px';
+r.style.top='300px';
+
+z.style.left='200px';
+z.style.top='350px';
+
+x.style.left='200px';
+x.style.top='400px';
+
+c.style.left='200px';
+c.style.top='450px';
+
+v.style.left='200px';
+v.style.top='500px';
+
+b.style.left='200px';
+b.style.top='550px';
+
+t.style.display='block'
+r.style.display='block'
+z.style.display='block'
+x.style.display='block'
+c.style.display='block'
+v.style.display='block'
+b.style.display='block'
+
+
+star=setInterval(move,100)
+}
+function move(){
+t=document.getElementById('t')
+r=document.getElementById('r')
+z=document.getElementById('z')
+x=document.getElementById('x')
+c=document.getElementById('c')
+v=document.getElementById('v')
+b=document.getElementById('b')
+
+rleft=r.style.left
+tleft=t.style.left
+zleft=z.style.left
+xleft=x.style.left
+cleft=c.style.left
+vleft=v.style.left
+bleft=b.style.left
+
+
+rleft=Number.parseInt(rleft.split('px')[0])
+tleft=Number.parseInt(tleft.split('px')[0])
+zleft=Number.parseInt(zleft.split('px')[0])
+xleft=Number.parseInt(xleft.split('px')[0])
+cleft=Number.parseInt(cleft.split('px')[0])
+vleft=Number.parseInt(vleft.split('px')[0])
+bleft=Number.parseInt(bleft.split('px')[0])
+
+rleft+=Math.ceil(Math.random()*10); 
+tleft+=Math.ceil(Math.random()*10); 
+zleft+=Math.ceil(Math.random()*10); 
+xleft+=Math.ceil(Math.random()*10); 
+cleft+=Math.ceil(Math.random()*10); 
+vleft+=Math.ceil(Math.random()*10); 
+bleft+=Math.ceil(Math.random()*10); 
+
+
+t.style.left=tleft+'px';
+r.style.left=rleft+'px';
+z.style.left=zleft+'px';
+x.style.left=xleft+'px';
+c.style.left=cleft+'px';
+v.style.left=vleft+'px';
+b.style.left=bleft+'px';
+
+if(parseInt(t.style.left) > 1200){
+    clearInterval(star)
+    alert('游戏已结束！乌龟取得胜利！')
+    t.style.left='200px'
+    r.style.left='200px'
+    z.style.left='200px'
+    x.style.left='200px'
+    c.style.left='200px'
+    v.style.left='200px'
+    b.style.left='200px'
+    
+}else if(parseInt(r.style.left) > 1200){
+    clearInterval(star)
+    alert('游戏已结束！兔子取得胜利！')
+    t.style.left='200px'
+    r.style.left='200px'
+    z.style.left='200px'
+    x.style.left='200px'
+    c.style.left='200px'
+    v.style.left='200px'
+    b.style.left='200px'
+
+}else if(parseInt(z.style.left) > 1200){
+    clearInterval(star)
+    alert('游戏已结束！猴子取得胜利！')
+    t.style.left='200px'
+    r.style.left='200px'
+    z.style.left='200px'
+    x.style.left='200px'
+    c.style.left='200px'
+    v.style.left='200px'
+    b.style.left='200px'
+
+}else if(parseInt(x.style.left) > 1200){
+    clearInterval(star)
+    alert('游戏已结束！老虎取得胜利！')
+    t.style.left='200px'
+    r.style.left='200px'
+    z.style.left='200px'
+    x.style.left='200px'
+    c.style.left='200px'
+    v.style.left='200px'
+    b.style.left='200px'
+
+}else if(parseInt(c.style.left) > 1200){
+    clearInterval(star)
+    alert('游戏已结束！大象取得胜利！')
+    t.style.left='200px'
+    r.style.left='200px'
+    z.style.left='200px'
+    x.style.left='200px'
+    c.style.left='200px'
+    v.style.left='200px'
+    b.style.left='200px'
+
+}else if(parseInt(v.style.left) > 1200){
+    clearInterval(star)
+    alert('游戏已结束！长颈鹿取得胜利！')
+    t.style.left='200px'
+    r.style.left='200px'
+    z.style.left='200px'
+    x.style.left='200px'
+    c.style.left='200px'
+    v.style.left='200px'
+    b.style.left='200px'
+    
+}else if(parseInt(b.style.left) > 1200){
+    clearInterval(star)
+    alert('游戏已结束！斑马取得胜利！')
+    t.style.left='200px'
+    r.style.left='200px'
+    z.style.left='200px'
+    x.style.left='200px'
+    c.style.left='200px'
+    v.style.left='200px'
+    b.style.left='200px'
+
+}
+}
+function stop(){
+clearInterval(star)
+}
+function restart(){
+star=setInterval(move,100)
+}
+
+
+
+
+</script>
+
